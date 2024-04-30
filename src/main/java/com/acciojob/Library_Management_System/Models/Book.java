@@ -11,10 +11,15 @@ import lombok.Setter;
 @Setter
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String bookId;
     private String authorName;
     private String bookName;
     private int noOfPages;
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
+
+    @JoinColumn
+    @ManyToOne
+    private Author author;
 }

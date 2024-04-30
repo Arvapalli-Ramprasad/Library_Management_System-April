@@ -6,21 +6,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table
-@Getter
-@Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class Student {
-
+@AllArgsConstructor
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int studentId;
-    private String name;
-    private int age;
-    private String branch;
-    @Column(unique = true,length = 300)
+    private int authorId;
+    private String authorName;
+    private String age;
     private String emailId;
-    private String address;
+    private String noOfBooks;
+    private Double rating;
 }
