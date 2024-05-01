@@ -17,7 +17,8 @@ public class CardService {
     public String addNewCard(){
         LibraryCard card = new LibraryCard();
         card.setCardStatus(CardStatus.NEW);
-        card = cardRepository.save(card);
+        card.setNoOfBooksIssued(0);
+        cardRepository.save(card);
         return "The card has been saved with ID "+card.getCardId();
     }
 
@@ -25,6 +26,10 @@ public class CardService {
         LibraryCard card = cardRepository.findById(cardId).get();
         Student student = studentRepository.findById(studentId).get();
         card.setStudent(student);
+        card.setCardStatus(CardStatus.Active);
+        cardRepository.save(card);
+
+        return "Associating Card and Student with caridId as "+cardId+" and studentId as "+studentId;
 
     }
 }

@@ -13,13 +13,15 @@ public class CardController {
     private CardService cardService;
     @PostMapping("add")
     public String  addCard(){
-
         return cardService.addNewCard();
     }
 
     @PutMapping("associateCardAndStudent")
     public String associateCardAndStudent(@RequestParam("cardId") Integer cardId,
                                           @RequestParam("studentId") Integer studentId){
+
+
+        return cardService.associateCardAndStudent(cardId,studentId);
 
     }
 }
