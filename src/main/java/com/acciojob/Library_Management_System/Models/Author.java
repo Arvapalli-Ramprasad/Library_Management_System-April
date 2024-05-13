@@ -19,6 +19,6 @@ public class Author {
     private String authorName;
     private String age;
     private String emailId;
-    private String noOfBooks;
+    private int noOfBooks;
     private Double rating;
 }

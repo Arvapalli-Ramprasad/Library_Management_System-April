@@ -16,8 +16,7 @@ import lombok.Setter;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String bookId;
-    private String authorName;
+    private Integer bookId;
     private String bookName;
     private int noOfPages;
     @Enumerated(value = EnumType.STRING)
